@@ -5,6 +5,8 @@ var y = "abc";
 var a = x;
 var b = y;
 
+// 10, abc, 10, abc
+
 // Value of x, y, a, b
 var x = 10;
 var y = "abc";
@@ -13,19 +15,27 @@ var b = y;
 a = 5;
 b = "def";
 
+// 10, abc, 5, def
+
 // Value of arr & arrCopy
 var arr = [1];
 var arrCopy = arr;
 arr.push(2);
 
+// [1, 2] & [1]
+
 // Value of obj
 var obj = { name: "ryan" };
 obj = { surname: "florance" };
+
+// {name: "ryan", surname: "florence"}
 
 // What's the output.
 var arr = ["Hi"];
 var arr2 = arr;
 console.log(arr === arr2);
+
+//true
 
 // What's the output.
 var arr1 = ["Hi!"];
@@ -33,8 +43,12 @@ var arr2 = ["Hi!"];
 console.log(arr1 === arr2);
 console.log(arr == arr2);
 
+// false for both
+
 //What's the output
 console.log([10] === [10]);
+
+//false
 
 // What's the output?
 
@@ -52,8 +66,14 @@ var personObj1 = {
   age: 30
 };
 var personObj2 = personDetails(personObj1);
-console.log(personObj1); // -> ?
-console.log(personObj2); // -> ?
+console.log(personObj1); // -> {
+  name: "Alex",
+  age: 30
+}
+console.log(personObj2); // -> {
+  name: "John",
+  age: 50
+}
 
 // Guess the output
 var oldArray = [];
@@ -62,27 +82,29 @@ object.newArray = oldArray;
 oldArray.push(10);
 console.log(object.newArray === oldArray);
 
+//false
+
 // Guess the output
 var a = 5;
 var b = a;
 a = 10;
-console.log(a);
-console.log(b);
+console.log(a); //10
+console.log(b); //5
 
 // What's the output?
 var a = {};
 var b = a;
 a.a = 1;
-console.log(a);
-console.log(b);
+console.log(a); //{a: 1}
+console.log(b); //{}
 
 // What's the output.
 var a = [];
 var b = a;
 a.push(1);
 console.log(a); // [1]
-console.log(b); // [1]
-console.log(a === b);
+console.log(b); // []
+console.log(a === b); //false
 
 // Clone the object person in clone
 var person = {
@@ -95,6 +117,7 @@ var person = {
 };
 
 var clone = {};
+clone = person;
 
 // Output of the following
 let brothers = ["John", "Bran", "Robb"];
@@ -117,15 +140,14 @@ let user3 = {
   brothers: ["John", "Bran", "Robb"]
 };
 // Output of the below code and why?
-user.house === user2.house; // output:
-user.house == user2.house; // output:
-user.brothers === user2.brothers; // output:
-user.brothers == user2.brothers; // output:
-user.name == user2.name; // output:
-user.name === user2.name; // output:
-user.brothers == user3.brothers; // output:
-user.brothers === user3.brothers; // output:
-user.house === user2.house; // output
-user.house === user3.house; // output
-user.brothers[0] === user2.brothers[0]; // output
-user.brothers[0] === user3.brothers[0]; // output
+user.house === user2.house; // output: true
+user.house == user2.house; // output: true
+user.brothers === user2.brothers; // output: true
+user.brothers == user2.brothers; // output: true
+user.name == user2.name; // output: true
+user.name === user2.name; // output: true
+user.brothers == user3.brothers; // output: true
+user.brothers === user3.brothers; // output: false
+user.house === user3.house; // output: true
+user.brothers[0] === user2.brothers[0]; // output: true
+user.brothers[0] === user3.brothers[0]; // output: true
